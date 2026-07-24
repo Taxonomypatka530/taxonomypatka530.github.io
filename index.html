@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITT Meccatronica Mazara - Supervisione HMI</title>
+    <title>ITT Meccatronica Mazara - Supervisione Impianto</title>
     <style>
         * {
             box-sizing: border-box;
@@ -57,40 +57,21 @@
             border-bottom: 1px solid #334155;
             padding-bottom: 15px;
         }
-        .status-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* --- SEZIONE AGGIUNTA PER LA DESCRIZIONE --- */
+        .info-section {
             background-color: #0f172a;
-            padding: 15px 20px;
+            padding: 20px;
             border-radius: 8px;
             margin-bottom: 25px;
             border: 1px solid #334155;
+            text-align: left;
+            line-height: 1.6;
+            color: #e2e8f0;
         }
-        .status-label {
-            font-weight: 600;
-            color: #cbd5e1;
+        .info-section strong {
+            color: #38bdf8;
         }
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            color: #22c55e;
-        }
-        .led {
-            width: 14px;
-            height: 14px;
-            background-color: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22c55e;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
+        /* ------------------------------------------ */
         .btn-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -141,44 +122,34 @@
 
     <div class="container">
         <div class="card">
-            <div class="card-title">Pannello Controllo Impianto</div>
+            <div class="card-title">Pannello Controllo Impianto Didattico</div>
             
-            <div class="status-box">
-                <span class="status-label">Stato Sistema:</span>
-                <div class="status-indicator">
-                    <span id="textStatus">ATTIVO</span>
-                    <div class="led" id="ledStatus"></div>
-                </div>
+            <!-- Area centrale modificata con la spiegazione -->
+            <div class="info-section">
+                <p><strong>Scopo dell'Automazione:</strong> Questo sistema gestisce e controlla una linea di produzione didattica miniaturizzata. L'automazione integra componenti meccanici, pneumatici ed elettronici per simulare un processo industriale reale (es. smistamento pezzi, assemblaggio).</p>
+                <br>
+                <p>Utilizza i pulsanti sottostanti per interagire con il PLC del sistema e attivare o disattivare l'intero ciclo operativo.</p>
             </div>
 
             <div class="btn-group">
-                <button class="btn btn-start" onclick="inviaComando('AVVIA')">AVVIA</button>
-                <button class="btn btn-stop" onclick="inviaComando('ARRESTA')">ARRESTA</button>
+                <button class="btn btn-start" onclick="inviaComando('AVVIA')">AVVIA CICLO</button>
+                <button class="btn btn-stop" onclick="inviaComando('ARRESTA')">ARRESTA EMERGENZA</button>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 ITT Meccatronica Mazara - GitHub Pages HMI
+        &copy; 2026 ITT Meccatronica Mazara - Laboratorio Automazione
     </footer>
 
     <script>
         function inviaComando(azione) {
-            const textStatus = document.getElementById('textStatus');
-            const ledStatus = document.getElementById('ledStatus');
-            
             if (azione === 'AVVIA') {
-                textStatus.textContent = 'ATTIVO';
-                textStatus.style.color = '#22c55e';
-                ledStatus.style.backgroundColor = '#22c55e';
-                ledStatus.style.boxShadow = '0 0 10px #22c55e';
-                alert('Comando inviato: AVVIO impianto.');
+                alert('Comando inviato: AVVIO CICLO AUTOMATICO. Il sistema sta avviando la sequenza.');
+                // Qui andrà la logica per inviare il comando al controllore (es. tramite WebSocket o API)
             } else {
-                textStatus.textContent = 'ARRESTATO';
-                textStatus.style.color = '#ef4444';
-                ledStatus.style.backgroundColor = '#ef4444';
-                ledStatus.style.boxShadow = '0 0 10px #ef4444';
-                alert('Comando inviato: ARRESTO impianto.');
+                alert('Comando inviato: ARRESTO DI EMERGENZA. Il sistema si è fermato istantaneamente.');
+                // Qui andrà la logica per l'arresto immediato
             }
         }
     </script>
