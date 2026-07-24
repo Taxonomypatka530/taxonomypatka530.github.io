@@ -40,40 +40,76 @@
             align-items: center;
             padding: 20px;
         }
+        /* Layout a griglia per affiancare i pannelli */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
         .card {
             background-color: #1e293b;
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 30px;
-            width: 100%;
-            max-width: 600px;
+            padding: 25px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card-title {
             text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
             color: #f1f5f9;
             border-bottom: 1px solid #334155;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
         .info-section {
             background-color: #0f172a;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border: 1px solid #334155;
             text-align: left;
             line-height: 1.6;
             color: #e2e8f0;
+            font-size: 0.95rem;
         }
         .info-section strong {
             color: #38bdf8;
         }
         .info-section p {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .info-section p:last-child {
             margin-bottom: 0;
+        }
+        /* Stile per i link/pulsanti di richiamo */
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-link {
+            display: block;
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        .btn-link:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
@@ -93,12 +129,27 @@
     </header>
 
     <div class="container">
-        <div class="card">
-            <div class="card-title">Presentazione Sistema di Automazione</div>
-            
-            <div class="info-section">
-                <p><strong>Scopo dell'Automazione:</strong> Questo sistema gestisce e controlla una linea di produzione didattica miniaturizzata, integrando componenti meccanici, pneumatici ed elettronici per simulare un processo industriale reale.</p>
-                <p><strong>Obiettivi Formativi:</strong> L'automazione permette di combinare lo studio teorico con la pratica laboratoriale, unendo la programmazione dei PLC e dei microcontrollori al controllo dei motori, dei sensori e dei sistemi di visione artificiale.</p>
+        <div class="dashboard">
+            <!-- Pannello Sinistra: Presentazione -->
+            <div class="card">
+                <div>
+                    <div class="card-title">Presentazione Sistema</div>
+                    <div class="info-section">
+                        <p><strong>Scopo dell'Automazione:</strong> Gestione e controllo di linee didattiche miniaturizzate per simulare processi industriali reali.</p>
+                        <p><strong>Obiettivi:</strong> Integrazione tra hardware, programmazione dei dispositivi di campo e supervisione dei cicli operativi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pannello Destra: Sezioni PLC e Arduino -->
+            <div class="card">
+                <div>
+                    <div class="card-title">Supervisione e Controllori</div>
+                    <div class="links-group">
+                        <a href="plc.html" class="btn-link">Pannello Controllo PLC</a>
+                        <a href="arduino.html" class="btn-link">Pannello Controllo Arduino</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
