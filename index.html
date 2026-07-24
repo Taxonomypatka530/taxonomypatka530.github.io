@@ -18,6 +18,12 @@
             flex-direction: column;
             min-height: 100vh;
         }
+        /* All'inizio la dashboard è nascosta finché non si inserisce la password */
+        #protectedContent {
+            display: none;
+            flex: 1;
+            flex-direction: column;
+        }
         header {
             background-color: #1e293b;
             padding: 20px;
@@ -109,6 +115,18 @@
             background-color: #2563eb;
             transform: translateY(-2px);
         }
+        /* Schermata di accesso negato */
+        .access-denied {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: #ef4444;
+            font-size: 1.2rem;
+        }
         footer {
             text-align: center;
             padding: 15px;
@@ -121,40 +139,64 @@
 </head>
 <body>
 
-    <header>
-        <h1>ITT Meccatronica Mazara</h1>
-        <p>Laboratorio di Automazione e Robotica</p>
-    </header>
+    <!-- Contenuto protetto che appare solo se la password è corretta -->
+    <div id="protectedContent">
+        <header>
+            <h1>ITT Meccatronica Mazara</h1>
+            <p>Laboratorio di Automazione e Robotica</p>
+        </header>
 
-    <div class="container">
-        <div class="dashboard">
-            <!-- Pannello Sinistra: Presentazione -->
-            <div class="card">
-                <div>
-                    <div class="card-title">Presentazione Sistema</div>
-                    <div class="info-section">
-                        <p><strong>Scopo dell'Automazione:</strong> Gestione e controllo di linee didattiche miniaturizzate per simulare processi industriali reali.</p>
-                        <p><strong>Obiettivi:</strong> Integrazione tra hardware, programmazione dei dispositivi di campo e supervisione dei cicli operativi.</p>
+        <div class="container">
+            <div class="dashboard">
+                <!-- Pannello Sinistra: Presentazione -->
+                <div class="card">
+                    <div>
+                        <div class="card-title">Presentazione Sistema</div>
+                        <div class="info-section">
+                            <p><strong>Scopo dell'Automazione:</strong> Gestione e controllo di linee didattiche miniaturizzate per simulare processi industriali reali.</p>
+                            <p><strong>Obiettivi:</strong> Integrazione tra hardware, programmazione dei dispositivi di campo e supervisione dei cicli operativi.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Pannello Destra: Sezioni PLC e Arduino -->
-            <div class="card">
-                <div>
-                    <div class="card-title">Supervisione e Controllori</div>
-                    <div class="links-group">
-                        <a href="plc.html" class="btn-link">Pannello Controllo PLC</a>
-                        <a href="https://drive.google.com/drive/folders/1dhQ4YbOqCBQCpUPiot9FcVfx1ob8fYDa" target="_blank" class="btn-link">Materiale Arduino (Drive)</a>
+                <!-- Pannello Destra: Sezioni PLC e Arduino -->
+                <div class="card">
+                    <div>
+                        <div class="card-title">Supervisione e Controllori</div>
+                        <div class="links-group">
+                            <a href="plc.html" class="btn-link">Pannello Controllo PLC</a>
+                            <a href="https://drive.google.com/drive/folders/1dhQ4YbOqCBQCpUPiot9FcVfx1ob8fYDa" target="_blank" class="btn-link">Materiale Arduino (Drive)</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <footer>
+            &copy; 2026 ITT Meccatronica Mazara - GitHub Pages
+        </footer>
     </div>
 
-    <footer>
-        &copy; 2026 ITT Meccatronica Mazara - GitHub Pages
-    </footer>
+    <!-- Messaggio se la password è errata o annullata -->
+    <div id="accessDenied" class="access-denied" style="display: none;">
+        <h2>Accesso Negato</h2>
+        <p style="color: #94a3b8; margin-top: 10px;">Password errata o accesso annullato. Ricarica la pagina per riprovare.</p>
+    </div>
 
+    <script>
+        // MODIFICA QUI LA PASSWORD A PIACERE
+        const passwordCorretta = "meccatronica2026";
+
+        // Richiedi la password all'apertura della pagina
+        const passwordInserita = prompt("Inserisci la password per accedere al sistema:");
+
+        if (passwordInserita === passwordCorretta) {
+            // Se corretta, mostra il contenuto
+            document.getElementById('protectedContent').style.display = 'flex';
+        } else {
+            // Se errata o annullata, mostra il messaggio di blocco
+            document.getElementById('accessDenied').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
