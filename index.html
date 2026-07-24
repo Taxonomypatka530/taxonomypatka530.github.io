@@ -104,9 +104,6 @@
             text-decoration: none;
             font-weight: bold;
             transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
         }
         .btn-link:hover {
             background-color: #2563eb;
@@ -131,7 +128,7 @@
 
     <div class="container">
         <div class="dashboard">
-            <!-- Pannello Sinistra: Presentazione (Sempre Libera) -->
+            <!-- Pannello Sinistra: Presentazione -->
             <div class="card">
                 <div>
                     <div class="card-title">Presentazione Sistema</div>
@@ -142,14 +139,13 @@
                 </div>
             </div>
 
-            <!-- Pannello Destra: Controllori (Arduino protetto da password) -->
+            <!-- Pannello Destra: Sezioni PLC e Arduino -->
             <div class="card">
                 <div>
                     <div class="card-title">Supervisione e Controllori</div>
                     <div class="links-group">
                         <a href="plc.html" class="btn-link">Pannello Controllo PLC</a>
-                        <!-- Pulsante protetto da script per Arduino -->
-                        <button onclick="verificaPassword()" class="btn-link">Materiale Arduino (Drive)</button>
+                        <a href="https://drive.google.com/drive/folders/1dhQ4YbOqCBQCpUPiot9FcVfx1ob8fYDa" target="_blank" class="btn-link">Materiale Arduino (Drive)</a>
                     </div>
                 </div>
             </div>
@@ -160,21 +156,5 @@
         &copy; 2026 ITT Meccatronica Mazara - GitHub Pages
     </footer>
 
-    <script>
-        function verificaPassword() {
-            // MODIFICA QUI LA PASSWORD A PIACERE
-            const passwordCorretta = "meccatronica2026";
-            
-            const passwordInserita = prompt("Inserisci la password per accedere al materiale Arduino:");
-
-            if (passwordInserita === passwordCorretta) {
-                // Se corretta, apre il link del Drive in una nuova scheda
-                window.open("https://drive.google.com/drive/folders/1dhQ4YbOqCBQCpUPiot9FcVfx1ob8fYDa", "_blank");
-            } else if (passwordInserita !== null) {
-                // Se errata (e non ha premuto Annulla)
-                alert("Password errata. Accesso negato.");
-            }
-        }
-    </script>
 </body>
 </html>
