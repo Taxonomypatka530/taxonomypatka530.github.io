@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"> 
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,6 @@
             border-bottom: 1px solid #334155;
             padding-bottom: 15px;
         }
-        /* --- SEZIONE AGGIUNTA PER LA DESCRIZIONE --- */
         .info-section {
             background-color: #0f172a;
             padding: 20px;
@@ -71,7 +70,6 @@
         .info-section strong {
             color: #38bdf8;
         }
-        /* ------------------------------------------ */
         .btn-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -100,7 +98,7 @@
             color: white;
         }
         .btn-stop:hover {
-            background-color: dc2626;
+            background-color: #dc2626;
             transform: translateY(-2px);
         }
         footer {
@@ -124,11 +122,8 @@
         <div class="card">
             <div class="card-title">Pannello Controllo Impianto Didattico</div>
             
-            <!-- Area centrale modificata con la spiegazione -->
             <div class="info-section">
                 <p><strong>Scopo dell'Automazione:</strong> Questo sistema gestisce e controlla una linea di produzione didattica miniaturizzata. L'automazione integra componenti meccanici, pneumatici ed elettronici per simulare un processo industriale reale (es. smistamento pezzi, assemblaggio).</p>
-                <br>
-                <p>Utilizza i pulsanti sottostanti per interagire con il PLC del sistema e attivare o disattivare l'intero ciclo operativo.</p>
             </div>
 
             <div class="btn-group">
@@ -146,10 +141,8 @@
         function inviaComando(azione) {
             if (azione === 'AVVIA') {
                 alert('Comando inviato: AVVIO CICLO AUTOMATICO. Il sistema sta avviando la sequenza.');
-                // Qui andrà la logica per inviare il comando al controllore (es. tramite WebSocket o API)
             } else {
                 alert('Comando inviato: ARRESTO DI EMERGENZA. Il sistema si è fermato istantaneamente.');
-                // Qui andrà la logica per l'arresto immediato
             }
         }
     </script>
