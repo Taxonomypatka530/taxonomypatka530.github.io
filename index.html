@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITT Meccatronica Mazara - Supervisione Impianto</title>
+    <title>ITT Meccatronica Mazara - Presentazione Automazione</title>
     <style>
         * {
             box-sizing: border-box;
@@ -46,7 +46,7 @@
             border-radius: 12px;
             padding: 30px;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         .card-title {
@@ -61,7 +61,6 @@
             background-color: #0f172a;
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 25px;
             border: 1px solid #334155;
             text-align: left;
             line-height: 1.6;
@@ -70,36 +69,11 @@
         .info-section strong {
             color: #38bdf8;
         }
-        .btn-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        .info-section p {
+            margin-bottom: 12px;
         }
-        .btn {
-            padding: 14px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-        .btn-start {
-            background-color: #10b981;
-            color: white;
-        }
-        .btn-start:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-        }
-        .btn-stop {
-            background-color: #ef4444;
-            color: white;
-        }
-        .btn-stop:hover {
-            background-color: #dc2626;
-            transform: translateY(-2px);
+        .info-section p:last-child {
+            margin-bottom: 0;
         }
         footer {
             text-align: center;
@@ -115,36 +89,23 @@
 
     <header>
         <h1>ITT Meccatronica Mazara</h1>
-        <p>Laboratorio di Automazione e Robotica - Supervisione HMI</p>
+        <p>Laboratorio di Automazione e Robotica</p>
     </header>
 
     <div class="container">
         <div class="card">
-            <div class="card-title">Pannello Controllo Impianto Didattico</div>
+            <div class="card-title">Presentazione Sistema di Automazione</div>
             
             <div class="info-section">
-                <p><strong>Scopo dell'Automazione:</strong> Questo sistema gestisce e controlla una linea di produzione didattica miniaturizzata. L'automazione integra componenti meccanici, pneumatici ed elettronici per simulare un processo industriale reale (es. smistamento pezzi, assemblaggio).</p>
-            </div>
-
-            <div class="btn-group">
-                <button class="btn btn-start" onclick="inviaComando('AVVIA')">AVVIA CICLO</button>
-                <button class="btn btn-stop" onclick="inviaComando('ARRESTA')">ARRESTA EMERGENZA</button>
+                <p><strong>Scopo dell'Automazione:</strong> Questo sistema gestisce e controlla una linea di produzione didattica miniaturizzata, integrando componenti meccanici, pneumatici ed elettronici per simulare un processo industriale reale.</p>
+                <p><strong>Obiettivi Formativi:</strong> L'automazione permette di combinare lo studio teorico con la pratica laboratoriale, unendo la programmazione dei PLC e dei microcontrollori al controllo dei motori, dei sensori e dei sistemi di visione artificiale.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 ITT Meccatronica Mazara - Laboratorio Automazione
+        &copy; 2026 ITT Meccatronica Mazara - GitHub Pages
     </footer>
 
-    <script>
-        function inviaComando(azione) {
-            if (azione === 'AVVIA') {
-                alert('Comando inviato: AVVIO CICLO AUTOMATICO. Il sistema sta avviando la sequenza.');
-            } else {
-                alert('Comando inviato: ARRESTO DI EMERGENZA. Il sistema si è fermato istantaneamente.');
-            }
-        }
-    </script>
 </body>
 </html>
